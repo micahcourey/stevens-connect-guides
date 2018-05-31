@@ -27,57 +27,69 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 3.  Next we will create a non-root user and password which will be used by <span class="app-name"></span> to access your MySQL database. To create a user issue the following command from the MySQL shell:
 
-        CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+        CREATE USER 'newuser'@'%' IDENTIFIED BY 'password';
 
     > replace 'new user' and 'password' with a username and password but do not remove the quote marks.
 
 4.  Your new user has been created but the user doesn't have access to the database. Next we will grant the user all privileges to the database. issue the following command replacing database_name and newuser with the name of the database we created in step 2 and the user we created in step 3:
 
-        GRANT ALL PRIVILEGES ON database_name . * TO 'newuser'@'*';
+        GRANT CREATE, INSERT ON database_name.* TO 'username'@'%' WITH GRANT OPTION;
 
 5.  Now that you have configured permissions for your new user, issue the following command to reload all the privileges:
 
         FLUSH PRIVILEGES;
 
-6.  Now that our database is configured, we need to test that our new user can access our database remotely. Access a computer that is not connected to the same network as your database server. Execute the following command in the terminal replacing newuser with the user you created in step 3 and the x's with your server's ip address:
+6.  Exit the MySQL command prompt by typing `exit` and pressing enter. In order to allow remote connections to our MySQL database we must update the 'bind_address' line in the MySQL config file. First open the file with the following command:
+
+        sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+7.  Locate the line that begins with 'bind_address' and change the ip address to `0.0.0.0` so that the line reads as follows:
+
+        bind-address = 0.0.0.0
+
+8.  Save and exit Nano text editor by holding down `ctrl + C`, `y` to save and press `enter`. Execute the following command to restart MySQL:
+
+        sudo service mysql restart
+
+9.  Now that our database is configured, we need to test that our new user can access our database remotely. Access a computer that is not connected to the same network as your database server. Execute the following command in the terminal replacing newuser with the user you created in step 3 and the x's with your server's ip address:
 
         mysql -u newuser -p -h xxx.xxx.xxx.xxx
 
-7.  Enter your password when prompted. You should now see the MySQL command prompt `mysql>` which means we have successfully connected to the database remotely and our setup was successful.
+10.  Enter your password when prompted. You should now see the MySQL command prompt `mysql>` which means we have successfully connected to the database remotely and our setup was successful.
 
-8.  Log into your <span class="app-name"></span> account, click your user menu in the top right corner and select 'Administration'.
+11.  Log into your <span class="app-name"></span> account, click your user menu in the top right corner and select 'Administration'.
     
     ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
 
-9.  From the Administration side menu select the project that you would like to create a Data Warehouse in.
+12.  From the Administration side menu select the project that you would like to create a Data Warehouse in.
 
     ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
 
-10.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
+13.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
 
-        ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
+            ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
 
-11.  Enter your database configuration in the warehouse setup form.
+14.  Enter your database configuration in the warehouse setup form.
 
-        ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
+            ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
 
-        - **Database:** Enter the name of the database we created in step 2.
-        - **Host:** Enter your server's IP address.
-        - **Port:** Enter the default MySQL port which is `3306`
-        - **User:** Enter the name of the user we created in step 3.
-        - **Password:** Enter the password we created for the user in step 3.
+    - **Database:** Enter the name of the database we created in step 2.
+    - **Host:** Enter your server's IP address.
+    - **Port:** Enter the default MySQL port which is `3306`
+    - **User:** Enter the name of the user we created in step 3.
+    - **Password:** Enter the password we created for the user in step 3.
 
-11.  Click the 'Create' button. You should now see an Advanced Configurations section on your Administration Project page. Click to expand the Data Warehouse item.
+15.  Click the 'Create' button. You should now see an Advanced Configurations section on your Administration Project page. Click to expand the Data Warehouse item.
 
-        ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
+            ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
 
-12. We can now configure our database tables. To add a table, click the '+ Table' button.
+16. We can now configure our database tables. To add a table, click the '+ Table' button.
 
-13. Give the table a name and select a single or multiple parameters from the list. Not that all parameters added to the table will report their readings to this single database table. After you've finished selecting parameters click the 'Create Table' button.
+17. Give the table a name and select a single or multiple parameters from the list. Not that all parameters added to the table will report their readings to this single database table. After you've finished selecting parameters click the 'Create Table' button.
 
     ![Create Warehouse Table Form](/img/create_warehouse_table.png "Configure your warehouse table")
 
-14. Continue adding tables by following the previous two steps for as many tables as you require.
+18. Continue adding tables by following the previous two steps for as many tables as you require.
 
-15. As your stations report data to <span class="app-name"></span> you should begin to see data saved to your server's database. Note that each table you created through <span class="app-name"></span> will not be created in your server database until the station reports new readings to this table. Now that the data is in your hands in your new database, you can import your data into any 3rd party data-management software.
+19. As your stations report data to <span class="app-name"></span> you should begin to see data saved to your server's database. Note that each table you created through <span class="app-name"></span> will not be created in your server database until the station reports new readings to this table. Now that the data is in your hands in your new database, you can import your data into any 3rd party data-management software.
   
