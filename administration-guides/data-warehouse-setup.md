@@ -67,11 +67,11 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 13.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
 
-            ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
+        ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
 
 14.  Enter your database configuration in the warehouse setup form.
 
-            ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
+        ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
 
     - **Database:** Enter the name of the database we created in step 2.
     - **Host:** Enter your server's IP address.
@@ -81,7 +81,7 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 15.  Click the 'Create' button. You should now see an Advanced Configurations section on your Administration Project page. Click to expand the Data Warehouse item.
 
-            ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
+        ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
 
 16. We can now configure our database tables. To add a table, click the '+ Table' button.
 
