@@ -47,36 +47,35 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 8.  Log into your <span class="app-name"></span> account, click your user menu in the top right corner and select 'Administration'.
     
-    ![User Menu - Administration](../img/user_menu_admin.png "Select Administration from the User Menu")
+    ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
 
 9.  From the Administration side menu select the project that you would like to create a Data Warehouse in.
 
-    ![Administration - Projects](../img/admin_menu_projects.png "Select a project")
+    ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
 
 10.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
 
-    
-    ![Administration - Project Page](../img/admin_project_page.png "Click the '+ Warehouse' button")
+        ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
 
 11.  Enter your database configuration in the warehouse setup form.
 
-    ![Administration - Create Warehouse Form](../img/create_warehouse_form.png "Fill in your database details") 
+        ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
 
-    - **Database:** Enter the name of the database we created in step 2.
-    - **Host:** Enter your server's IP address.
-    - **Port:** Enter the default MySQL port which is `3306`
-    - **User:** Enter the name of the user we created in step 3.
-    - **Password:** Enter the password we created for the user in step 3.
+        - **Database:** Enter the name of the database we created in step 2.
+        - **Host:** Enter your server's IP address.
+        - **Port:** Enter the default MySQL port which is `3306`
+        - **User:** Enter the name of the user we created in step 3.
+        - **Password:** Enter the password we created for the user in step 3.
 
 11.  Click the 'Create' button. You should now see an Advanced Configurations section on your Administration Project page. Click to expand the Data Warehouse item.
 
-    ![Administration - Advanced Configuration](../img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
+        ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
 
 12. We can now configure our database tables. To add a table, click the '+ Table' button.
 
 13. Give the table a name and select a single or multiple parameters from the list. Not that all parameters added to the table will report their readings to this single database table. After you've finished selecting parameters click the 'Create Table' button.
 
-    ![Create Warehouse Table Form](../img/create_warehouse_table.png "Configure your warehouse table")
+    ![Create Warehouse Table Form](/img/create_warehouse_table.png "Configure your warehouse table")
 
 14. Continue adding tables by following the previous two steps for as many tables as you require.
 
