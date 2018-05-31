@@ -59,11 +59,11 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 11.  Log into your <span class="app-name"></span> account, click your user menu in the top right corner and select 'Administration'.
     
-    ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
+        ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
 
 12.  From the Administration side menu select the project that you would like to create a Data Warehouse in.
 
-    ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
+        ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
 
 13.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
 
