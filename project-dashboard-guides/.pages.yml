@@ -1,0 +1,5 @@
+title: Project Dashboard Guides
+arrange:
+  - dashboard-setup.md
+  - alarm-setup.md
+  - building-charts-and-data-tables-in-trends.md

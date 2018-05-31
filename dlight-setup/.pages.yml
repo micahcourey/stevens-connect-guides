@@ -1,0 +1,5 @@
+title: Dlight Setup
+arrange:
+  - dlight-sdi12-sensor-setup.md
+  - dlight-analog-sensor-setup.md
+  - dlight-pulse-sensor-setup.md

@@ -1,0 +1,9 @@
+title: Station Management Guides
+arrange:
+  - algebraic-function-setup.md
+  - flow-table-setup.md
+  - data-forwarding-setup.md
+  - data-correction.md
+  - virtual-sensor-setup.md
+  - web-sensor-setup.md
+  - station-notebooks.md

@@ -1,0 +1,7 @@
+title: eTracker and AVO Setup
+arrange:
+  - etracker-sdi12-sensor-setup.md
+  - etracker-analog-sensor-setup.md
+  - etracker-pulse-sensor-setup.md
+  - etracker-low-power-mode.md
+  - etracker-test-messages.md
