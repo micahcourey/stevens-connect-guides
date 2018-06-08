@@ -1,6 +1,6 @@
 # Data Warehouse Setup
 
-A data warehouse is an independent database where incoming readings will be stored and is often used for data analysis. Setting up a data warehouse will allow you to import your data into 3rd party data-management software. <span class="app-name"></span> offers an 'On time' or 'Real time' data warehouse, which means the data is always up to date. Once your data warehouse is setup it will automatically begin collecting new data at regular intervals. Note that only Project Administrators have access to the Data Warehouse feature.
+A data warehouse is an independent database where incoming readings will be stored and is often used for data analysis. Setting up a data warehouse will allow you to import your data into 3rd party data-management software. <span class="app-name"></span> offers a 'Real time' data warehouse, which means the data is always up to date. Once your data warehouse is setup it will automatically begin collecting new data at regular intervals. Note that only Project Administrators have access to the Data Warehouse feature.
 
 ## Prerequisites
 
@@ -25,13 +25,15 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
         CREATE DATABASE database_name;
 
+    > Note that you can name 'database_name' to whatever you want to name your database, just make sure to follow the MySQL <a href="https://dev.mysql.com/doc/refman/8.0/en/identifiers.html">naming conventions</a>.
+
 3.  Next we will create a non-root user and password which will be used by <span class="app-name"></span> to access your MySQL database. To create a user issue the following command from the MySQL shell:
 
         CREATE USER 'newuser'@'%' IDENTIFIED BY 'password';
 
-    > replace 'new user' and 'password' with a username and password but do not remove the quote marks.
+    > Replace 'new user' and 'password' with a username and password but do not remove the quote marks.
 
-4.  Your new user has been created but the user doesn't have access to the database. Next we will grant the user all privileges to the database. issue the following command replacing database_name and newuser with the name of the database we created in step 2 and the user we created in step 3:
+4.  Your new user has been created but the user doesn't have access to the database. Next we will grant the user all privileges to the database. Issue the following command replacing database_name and newuser with the name of the database we created in step 2 and the user we created in step 3:
 
         GRANT CREATE, INSERT ON database_name.* TO 'username'@'%' WITH GRANT OPTION;
 
@@ -59,19 +61,20 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 11.  Log into your <span class="app-name"></span> account, click your user menu in the top right corner and select 'Administration'.
     
-        ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
+    ![User Menu - Administration](/img/user_menu_admin.png "Select Administration from the User Menu")
 
 12.  From the Administration side menu select the project that you would like to create a Data Warehouse in.
 
-        ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
+    ![Administration - Projects](/img/admin_menu_projects.png "Select a project")
 
 13.  Scroll down to the Data Warehouse info card, click the '+ Warehouse' button to get started.
 
-        ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
+    
+    ![Administration - Project Page](/img/admin_project_page.png "Click the '+ Warehouse' button")
 
 14.  Enter your database configuration in the warehouse setup form.
 
-        ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
+    ![Administration - Create Warehouse Form](/img/create_warehouse_form.png "Fill in your database details") 
 
     - **Database:** Enter the name of the database we created in step 2.
     - **Host:** Enter your server's IP address.
@@ -81,11 +84,11 @@ Once you have MySQL and a terminal emulator installed on your system, follow the
 
 15.  Click the 'Create' button. You should now see an Advanced Configurations section on your Administration Project page. Click to expand the Data Warehouse item.
 
-        ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
+    ![Administration - Advanced Configuration](/img/warehouse_advanced_config.png "Click to expand the Data Warehouse item") 
 
 16. We can now configure our database tables. To add a table, click the '+ Table' button.
 
-17. Give the table a name and select a single or multiple parameters from the list. Not that all parameters added to the table will report their readings to this single database table. After you've finished selecting parameters click the 'Create Table' button.
+17. Give the table a name and select a single or multiple parameters from the list. Note that all parameters added to the table will report their readings to this single database table. After you've finished selecting parameters click the 'Create Table' button.
 
     ![Create Warehouse Table Form](/img/create_warehouse_table.png "Configure your warehouse table")
 

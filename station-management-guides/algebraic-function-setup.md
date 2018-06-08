@@ -7,13 +7,19 @@ Algebraic Functions allow you to perform simple to complex math functions using 
 1.  Navigate to the Station Management page for the station that you want to create the algebraic function for.
 2.  On the Station Management page click 'Data Transformations' from the side menu to expand the options and then select 'Algebraic Functions'.
 3.  Click the '+ Function' button in the top right corner of the Algebraic Function Summary page.
+        ![Algebraic Functions Summary Empty](/img/function_setup.png "Click the '+ Function' button")
 4.  You can now select whether you would like to create a custom formula or a predefined formula.
-    -   If you selected a predefined option, you can now select the appropriate formula from the list of formulas and then click 'Next'.
+        ![Algebraic Function Wizard](/img/function_step1.png "Select which type of function you want to create")
+    If you selected a predefined option, you can now select the appropriate formula from the list of formulas and then click 'Next'.
+        ![Algebraic Function Wizard Function Selector](/img/function_selector.png "Select a predefined formula")
 5.  You will now be taken to the step where you can create or customize your formula. If you selected a predefined formula than the formula field will already be filled in. If you selected 'Custom Formula' in the first step than you will now enter your formula in this field and select the appropriate output unit from the list. Note that you can also edit a predefined formula.
+        ![Algebraic Function Wizard Formula Configuration](/img/function_step2.png "Configure your formula details")
 6.  For each variable in your formula, select the parameter that you would like to assign to that particular variable.
 7.  Give your Algebraic Function a unique name to identify it by and provide a description of its purpose.
+        ![Algebraic Function Wizard Name and Description](/img/function_step3.png "Give your Algebraic Function a name and description")
 8.  Click the 'Save' button to create your new Algebraic Function.
 9.  You should now see your new Algebraic Function display on a card on the Algebraic Function Summary page.
+        ![Algebraic Function Card](/img/function_card.png "View, test and edit your algebraic functions from the Algebraic Function Summary page")
 
 ### Basic Operands
 
